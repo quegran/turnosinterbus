@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TURNOS INTERBUS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de entrada -->
+    <div id="input-screen" class="screen active">
+        <div class="background-container">
+            <img src="assets/images/fondo.jpg" alt="Fondo Interbus" class="background-image" onerror="this.style.display='none'">
+            <div class="overlay"></div>
+        </div>
+        
+        <div class="content">
+            <h1 class="title">TURNOS INTERBUS</h1>
+            
+            <div class="pin-container">
+                <div class="pin-inputs">
+                    <input type="text" class="pin-digit" maxlength="1" data-index="0" inputmode="numeric">
+                    <input type="text" class="pin-digit" maxlength="1" data-index="1" inputmode="numeric">
+                    <input type="text" class="pin-digit" maxlength="1" data-index="2" inputmode="numeric">
+                    <input type="text" class="pin-digit" maxlength="1" data-index="3" inputmode="numeric">
+                </div>
+            </div>
+            
+            <p class="instruction">Introduzca el número de turno</p>
+        </div>
+    </div>
+
+    <!-- Pantalla de imagen -->
+    <div id="image-screen" class="screen">
+        <div class="image-container">
+            <img id="turno-image" src="" alt="Imagen del turno" class="turno-image">
+        </div>
+    </div>
+
+    <!-- Pantalla de error -->
+    <div id="error-screen" class="screen">
+        <div class="background-container">
+            <img src="assets/images/fondo.jpg" alt="Fondo Interbus" class="background-image" onerror="this.style.display='none'">
+            <div class="overlay"></div>
+        </div>
+        
+        <div class="error-content">
+            <h2 id="error-message">El turno no existe</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
