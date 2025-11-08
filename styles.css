@@ -103,8 +103,8 @@ body {
     border-color: #007bff;
 }
 
-.pin-digit:disabled {
-    border-color: #666;
+pin-digit:disabled {
+    border-color: black;
     color: #666;
     cursor: not-allowed;
 }
@@ -211,6 +211,7 @@ body {
         border-color: #007bff;
     }
 }
+
 
 
 
