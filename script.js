@@ -5,9 +5,9 @@ class InterbusTurnosApp {
         this.lastTriedNumber = '';
         this.maxDigits = 3;
         
-        // Lista de imágenes disponibles (copiada del código Flutter)
+        // Lista de imágenes disponibles (sin duplicados, ordenada)
         this.availableImages = [
-            'n1100', 'n1547', 'n1883', 'n1888', 'n201', 'n206', 'n207', 'n203', 'n202', 'n205', 'n208', 'n209', 'n210',
+            'n1100', 'n1547', 'n1883', 'n1888', 'n201', 'n202', 'n203', 'n205', 'n206', 'n207', 'n208', 'n209', 'n210',
             'n212', 'n213', 'n214', 'n215', 'n218', 'n219', 'n220', 'n221', 'n222', 'n223',
             'n225', 'n226', 'n229', 'n230', 'n232', 'n234', 'n235', 'n238', 'n241', 'n242',
             'n243', 'n244', 'n246', 'n247', 'n248', 'n249', 'n260', 'n263', 'n265', 'n268',
@@ -49,6 +49,16 @@ class InterbusTurnosApp {
     init() {
         this.setupEventListeners();
         this.updatePinInputsState();
+        this.focusFirstInput();
+    }
+    
+    focusFirstInput() {
+        setTimeout(() => {
+            const firstInput = document.querySelector('.pin-digit');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        }, 100);
     }
     
     setupEventListeners() {
@@ -268,9 +278,7 @@ class InterbusTurnosApp {
         this.switchScreen('input');
         
         // Enfocar el primer campo
-        setTimeout(() => {
-            document.querySelector('.pin-digit').focus();
-        }, 100);
+        this.focusFirstInput();
     }
     
     handleBackButton() {
@@ -296,5 +304,3 @@ window.addEventListener('load', () => {
         window.location.hash = 'input';
     }
 });
-
-
