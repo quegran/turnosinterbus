@@ -88,7 +88,7 @@ body {
 .pin-digit {
     width: 56px;
     height: 56px;
-    border: 2px solid white;
+    border: 2px solid black; 
     border-radius: 10px;
     background-color: transparent;
     color: black;
@@ -210,4 +210,5 @@ body {
         border-color: #007bff;
     }
 }
+
 
