@@ -93,7 +93,7 @@ class InterbusTurnosApp {
         this.updateInputValue();
         
         // Determinar máximo de dígitos según primera cifra
-        this.maxDigits = document.querySelector('.pin-digit').value === '1' ? 4 : 3;
+        this.maxDigits = 3;
         this.updatePinInputsState();
         
         // Si se ingresó un dígito y no es el último campo habilitado, pasar al siguiente
