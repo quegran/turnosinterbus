@@ -104,13 +104,14 @@ class InterbusTurnosApp {
             }
         }
         
-        // Si se alcanzó la longitud máxima, buscar imagen
-        if (this.inputValue.length >= this.maxDigits) {
-            this.tryShowImage();
-        }
+
     }
     
     onKeyDown(event, index) {
+        if (event.key === 'Enter') {
+            this.tryShowImage();
+            return;
+        }
         // Manejar backspace
         if (event.key === 'Backspace' && event.target.value === '' && index > 0) {
             const prevInput = document.querySelector(`[data-index="${index - 1}"]`);
@@ -290,7 +291,9 @@ class InterbusTurnosApp {
 
 // Inicializar la aplicación cuando se carga el DOM
 document.addEventListener('DOMContentLoaded', () => {
-    new InterbusTurnosApp();
+    const app = new InterbusTurnosApp();
+    const ok=document.getElementById('ok-btn');
+    if(ok){ok.addEventListener('click',()=>app.tryShowImage());}
 });
 
 // Manejar el estado inicial de la URL
